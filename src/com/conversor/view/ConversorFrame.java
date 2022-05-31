@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 
 public abstract class ConversorFrame {
 
-	public Integer MostrarMensajeInputConvertir(String mensaje, String titulo) {
+	public Float MostrarMensajeInputConvertir(String mensaje, String titulo) {
 		String m = JOptionPane.showInputDialog(
 				new JOptionPane(), 
 				mensaje,
@@ -14,7 +14,7 @@ public abstract class ConversorFrame {
 			MainFrame.TerminarPrograma();
 		}
 
-		return Integer.valueOf(m.toString());
+		return Float.valueOf(m.toString());
 	};
 
 	public String ElegirTipoCambio(Object[] options, String mensaje, String titulo){

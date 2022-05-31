@@ -4,15 +4,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JOptionPane;
+import javax.swing.UIManager;
 
 import com.conversor.modelo.Conversor;
+import com.formdev.flatlaf.FlatDarkLaf;
 
 public class MainFrame {
 	private List<Conversor> listaConversores = new ArrayList<>();	
 	
 	public MainFrame() {
+		
+		try {
+			UIManager.setLookAndFeel(new FlatDarkLaf());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 		this.listaConversores.add(new Conversor("Conversor de Moneda"));
-		this.listaConversores.add(new Conversor("Conversor de Temeperatura"));
+		this.listaConversores.add(new Conversor("Conversor de Temperatura"));
 	}
 
 	public Object ElegirConversor() {
@@ -32,7 +41,6 @@ public class MainFrame {
 		if (seleccion == null) {
 			 TerminarPrograma();
 		 }
-		
 		return seleccion;
 	}	
 	
